@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.zadints.zgit.presentation.terminal.TerminalView?>
+<?import javafx.scene.control.ScrollPane?>
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="org.zadints.zgit.presentation.controller.IndexController"
+        >
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <top>
+
+    <HBox
+            alignment="CENTER_LEFT"
+            spacing="12"
+            styleClass="header">
+
+      <padding>
+        <Insets
+                top="10"
+                right="16"
+                bottom="10"
+                left="16"/>
+      </padding>
+
+
+      <!-- PROJECT -->
+
+      <HBox
+              alignment="CENTER_LEFT"
+              spacing="9"
+              styleClass="project-selector">
+
+        <StackPane styleClass="project-icon">
+
+          <Label text="Z"/>
+
+        </StackPane>
+
+
+        <VBox spacing="1">
+
+          <Label
+                  text="ZGit"
+                  styleClass="project-name"/>
+
+          <Label
+                  text="main"
+                  styleClass="project-branch"/>
+
+        </VBox>
+
+      </HBox>
+
+
+      <Region HBox.hgrow="ALWAYS"/>
+
+
+      <!-- PROJECT -->
+
+      <Button
+              text="Project"
+              styleClass="header-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-repo-24"
+                  iconSize="15"/>
+
+        </graphic>
+
+      </Button>
+
+
+      <!-- PLUGINS -->
+
+      <Button
+              text="Plugins"
+              styleClass="header-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-package-24"
+                  iconSize="15"/>
+
+        </graphic>
+
+      </Button>
+
+
+      <!-- SETTINGS -->
+
+      <Button
+              styleClass="header-icon-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-gear-24"
+                  iconSize="16"/>
+
+        </graphic>
+
+        <tooltip>
+
+          <Tooltip text="Configuración"/>
+
+        </tooltip>
+
+      </Button>
+
+
+      <!-- LOGO -->
+
+      <StackPane
+              styleClass="app-logo">
+
+        <Label text="ZG"/>
+
+      </StackPane>
+
+    </HBox>
+
+  </top>
+
+
+  <!-- =========================
+       LEFT SIDEBAR
+       ========================= -->
+
+  <left>
+
+    <VBox
+            alignment="TOP_CENTER"
+            spacing="7"
+            styleClass="sidebar">
+
+      <padding>
+        <Insets
+                top="14"
+                right="8"
+                bottom="14"
+                left="8"/>
+      </padding>
+
+
+      <!-- =====================
+           COMMIT
+           ===================== -->
+
+      <Button
+              styleClass="sidebar-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-git-commit-24"
+                  iconSize="17"/>
+
+        </graphic>
+
+        <tooltip>
+
+          <Tooltip text="Commit"/>
+
+        </tooltip>
+
+      </Button>
+
+
+      <!-- =====================
+           PULL
+           ===================== -->
+
+      <Button
+              styleClass="sidebar-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-repo-pull-16"
+                  iconSize="17"/>
+
+        </graphic>
+
+        <tooltip>
+
+          <Tooltip text="Pull"/>
+
+        </tooltip>
+
+      </Button>
+
+
+      <!-- =====================
+           PUSH
+           ===================== -->
+
+      <Button
+              styleClass="sidebar-button sidebar-primary">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-repo-push-24"
+                  iconSize="17"/>
+
+        </graphic>
+
+        <tooltip>
+
+          <Tooltip text="Push"/>
+
+        </tooltip>
+
+      </Button>
+
+
+      <!-- =====================
+           CHECKOUT
+           ===================== -->
+
+      <Button
+              styleClass="sidebar-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-git-branch-24"
+                  iconSize="17"/>
+
+        </graphic>
+
+        <tooltip>
+
+          <Tooltip text="Checkout branch"/>
+
+        </tooltip>
+
+      </Button>
+
+
+      <!-- ESPACIO -->
+
+      <Region VBox.vgrow="ALWAYS"/>
+
+
+      <!-- =====================
+           NEW TERMINAL
+           ===================== -->
+
+      <Button
+              styleClass="sidebar-button">
+
+        <graphic>
+
+          <FontIcon
+                  iconLiteral="oct-terminal-24"
+                  iconSize="17"/>
+
+        </graphic>
+
+        <tooltip>
+
+          <Tooltip text="Nueva consola"/>
+
+        </tooltip>
+
+      </Button>
+
+    </VBox>
+
+  </left>
+
+
+  <!-- =========================
+       TERMINAL
+       ========================= -->
+
+  <center>
+
+
+    <ScrollPane
+            fitToWidth="true"
+            fitToHeight="true"
+            styleClass="terminal-container">
+
+      <StackPane
+              fx:id="terminalContainer"
+              prefWidth="900"
+              prefHeight="600"
+              style="-fx-background-color: #0B1020;">
+
+        <TerminalView
+                fx:id="terminal"
+                maxWidth="Infinity"
+                styleClass="ter"
+                maxHeight="Infinity"/>
+
+      </StackPane>
+
+    </ScrollPane>
+
+  </center>
+
+</BorderPane>

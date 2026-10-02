@@ -1,0 +1,327 @@
+.root {
+    -fx-font-family: "Poppins";
+    -fx-background-color: #0b0f19;
+}
+
+
+/* ==============================
+   APP
+   ============================== */
+
+.app {
+    -fx-background-color: #0b0f19;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.header {
+    -fx-background-color: #0d111c;
+    -fx-border-color: transparent transparent #1a2130 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+
+/* ==============================
+   PROJECT
+   ============================== */
+
+.project-selector {
+    -fx-padding: 4 10 4 4;
+    -fx-background-radius: 9;
+    -fx-border-radius: 9;
+}
+
+.project-selector:hover {
+    -fx-background-color: #131a28;
+}
+
+.project-icon {
+    -fx-pref-width: 30;
+    -fx-pref-height: 30;
+
+    -fx-background-color: #151c2b;
+    -fx-background-radius: 8;
+}
+
+.project-icon Label {
+    -fx-text-fill: #7dd3fc;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.project-name {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+.project-branch {
+    -fx-text-fill: #697386;
+    -fx-font-size: 10px;
+}
+
+
+/* ==============================
+   HEADER BUTTONS
+   ============================== */
+
+.header-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9ca3af;
+
+    -fx-font-size: 12px;
+
+    -fx-padding: 7 10 7 10;
+
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+
+    -fx-cursor: hand;
+}
+
+.header-button:hover {
+    -fx-background-color: #151c2b;
+    -fx-text-fill: #e5e7eb;
+}
+
+
+.header-icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8b95a7;
+
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.header-icon-button:hover {
+    -fx-background-color: #151c2b;
+    -fx-text-fill: #ffffff;
+}
+
+
+/* ==============================
+   LOGO
+   ============================== */
+
+.app-logo {
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+
+    -fx-background-color: #151c2b;
+    -fx-background-radius: 9;
+}
+
+.app-logo Label {
+    -fx-text-fill: #60a5fa;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+
+/* ==============================
+   SIDEBAR
+   ============================== */
+
+.sidebar {
+
+    -fx-background-color: #0d111c;
+
+    -fx-border-color: transparent #1a2130 transparent transparent;
+    -fx-border-width: 0 1px 0 0;
+
+    -fx-pref-width: 58px;
+}
+
+
+/* ==============================
+   SIDEBAR BUTTON
+   ============================== */
+
+.sidebar-button {
+
+    -fx-background-color: transparent;
+
+    -fx-pref-width: 38px;
+    -fx-pref-height: 38px;
+
+    -fx-padding: 0;
+
+    -fx-background-radius: 9;
+    -fx-border-radius: 9;
+
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+
+    -fx-background-color: #151c2b;
+}
+
+.sidebar-button:pressed {
+
+    -fx-background-color: #1b2435;
+}
+
+
+/* ==============================
+   SIDEBAR ICON
+   ============================== */
+
+.sidebar-icon {
+
+    -fx-text-fill: #778197;
+
+    -fx-font-size: 16px;
+}
+
+.sidebar-button:hover .sidebar-icon {
+
+    -fx-text-fill: #dbeafe;
+}
+
+
+/* ==============================
+   PRIMARY ACTION
+   ============================== */
+
+.sidebar-primary {
+
+    -fx-background-color: rgba(59, 130, 246, 0.12);
+}
+
+.sidebar-primary .sidebar-icon {
+
+    -fx-text-fill: #60a5fa;
+}
+
+.sidebar-primary:hover {
+
+    -fx-background-color: rgba(59, 130, 246, 0.20);
+}
+
+
+/* ==============================
+   TERMINAL
+   ============================== */
+
+.terminal-container {
+
+    -fx-background-color: #090d15;
+
+    -fx-padding: 0;
+}
+
+
+.terminal {
+
+    -fx-background-color: #090d15;
+
+    -fx-control-inner-background: #090d15;
+
+    -fx-text-fill: #d1d5db;
+
+    -fx-highlight-fill: #243047;
+    -fx-highlight-text-fill: #ffffff;
+
+    -fx-font-family: "JetBrains Mono";
+    -fx-font-size: 13px;
+
+    -fx-padding: 18px;
+
+    -fx-border-width: 0;
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
+/* TextArea viewport */
+
+.terminal .content {
+
+    -fx-background-color: #090d15;
+}
+
+
+/* Scrollbar */
+
+.terminal .scroll-bar:vertical,
+.terminal .scroll-bar:horizontal {
+
+    -fx-background-color: transparent;
+}
+
+.terminal .scroll-bar .thumb {
+
+    -fx-background-color: #252e3f;
+
+    -fx-background-radius: 8;
+}
+
+.terminal .scroll-bar .thumb:hover {
+
+    -fx-background-color: #354157;
+}
+
+.terminal .scroll-bar .track {
+
+    -fx-background-color: transparent;
+}
+
+
+/* ==============================
+   SIDEBAR ICONS
+   ============================== */
+
+.sidebar-button .ikonli-font-icon {
+    -fx-icon-color: #778197;
+}
+
+.sidebar-button:hover .ikonli-font-icon {
+    -fx-icon-color: #e5e7eb;
+}
+
+
+/* PRIMARY */
+
+.sidebar-primary {
+    -fx-background-color: rgba(59, 130, 246, 0.12);
+}
+
+.sidebar-primary .ikonli-font-icon {
+    -fx-icon-color: #60a5fa;
+}
+
+.sidebar-primary:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.20);
+}
+
+.sidebar-primary:hover .ikonli-font-icon {
+    -fx-icon-color: #93c5fd;
+}
+
+
+/* HEADER ICONS */
+
+.header-button .ikonli-font-icon {
+    -fx-icon-color: #778197;
+}
+
+.header-button:hover .ikonli-font-icon {
+    -fx-icon-color: #e5e7eb;
+}
+
+
+.header-icon-button .ikonli-font-icon {
+    -fx-icon-color: #778197;
+}
+
+.header-icon-button:hover .ikonli-font-icon {
+    -fx-icon-color: #e5e7eb;
+}

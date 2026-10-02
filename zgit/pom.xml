@@ -20,24 +20,56 @@
       <version>21.0.6</version>
     </dependency>
     <dependency>
+      <groupId>org.jetbrains.pty4j</groupId>
+      <artifactId>pty4j</artifactId>
+      <version>0.13.4</version>
+    </dependency>
+    <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>21.0.6</version>
     </dependency>
 
-<dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>2.0.20</version>
+    </dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>  </dependencies>
+    </dependency>
 
+    <dependency>
+      <groupId>org.kordamp.ikonli</groupId>
+      <artifactId>ikonli-javafx</artifactId>
+      <version>12.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.kordamp.ikonli</groupId>
+      <artifactId>ikonli-octicons-pack</artifactId>
+      <version>12.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.techsenger.ansi4j</groupId>
+      <artifactId>ansi4j-core-api</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.techsenger.ansi4j</groupId>
+      <artifactId>ansi4j-core-impl</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
@@ -45,8 +77,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <source>21</source>
-          <target>21</target>
+          <release>21</release>
         </configuration>
       </plugin>
       <plugin>
@@ -59,6 +90,35 @@
             <id>default-cli</id>
             <configuration>
               <mainClass>org.zadints.zgit/org.zadints.zgit.HelloApplication</mainClass>
+              <launcher>app</launcher>
+              <jlinkZipName>app</jlinkZipName>
+              <jlinkImageName>app</jlinkImageName>
+              <noManPages>true</noManPages>
+              <stripDebug>true</stripDebug>
+              <noHeaderFiles>true</noHeaderFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+
+        <executions>
+          <execution>
+            <id>default-cli</id>
+
+            <configuration>
+              <mainClass>
+                org.zadints.zgit/org.zadints.zgit.HelloApplication
+              </mainClass>
+
+              <options>
+                <option>--enable-native-access=javafx.graphics</option>
+                <option>--enable-native-access=ALL-UNNAMED</option>
+              </options>
+
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
