@@ -32,6 +32,7 @@ public class TerminalView extends StackPane {
             getChildren().add(canvas);
 
             setFocusTraversable(true);
+            canvas.setFocusTraversable(true);
 
             setStyle(
                     "-fx-background-color: #0B1020;"
@@ -45,7 +46,9 @@ public class TerminalView extends StackPane {
                     (obs, oldValue, newValue) -> resizeCanvas()
             );
 
-            setOnMouseClicked(event -> requestFocus());
+            setOnMouseClicked(event -> {
+                canvas.requestFocus();
+            });
         }
 
         public void setBuffer(TerminalBuffer buffer) {

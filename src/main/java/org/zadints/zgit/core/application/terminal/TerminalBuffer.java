@@ -101,6 +101,7 @@ public class TerminalBuffer {
     */
     public void write(String text) {
         for (char character : text.toCharArray()) {
+            System.out.println("write: " + character);
             write(character);
         }
     }
@@ -126,17 +127,18 @@ public class TerminalBuffer {
 
             case '\b' -> {
 
+                /*
                 System.out.println(
                         "BACKSPACE -> cursorX="
                                 + cursorX
                                 + " cursorY="
                                 + cursorY
                 );
-
+*/
                 if (cursorX > 0) {
 
                     cursorX--;
-
+/*
                     System.out.println(
                             "Borrando celda X="
                                     + cursorX
@@ -145,7 +147,7 @@ public class TerminalBuffer {
                                     + " caracter="
                                     + cells[cursorY][cursorX].getCharacter()
                     );
-
+*/
                     TerminalCell cell =
                             cells[cursorY][cursorX];
 

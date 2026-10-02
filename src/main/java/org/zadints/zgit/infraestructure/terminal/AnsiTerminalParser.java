@@ -17,13 +17,9 @@ import java.util.List;
 public class AnsiTerminalParser {
 
     private final TerminalBuffer buffer;
-
     private StreamParser parser;
 
-    public AnsiTerminalParser(
-            TerminalBuffer buffer
-    ) {
-
+    public AnsiTerminalParser(TerminalBuffer buffer) {
         this.buffer = buffer;
     }
 
@@ -33,22 +29,20 @@ public class AnsiTerminalParser {
 
             try {
 
-                ParserFactory factory =
-                        new ParserFactory.Builder()
-                                .environment(
-                                        Environment._7_BIT
-                                )
-                                .functionTypes(
-                                        ControlFunctionType.C0_SET,
-                                        ControlFunctionType.C1_SET,
-                                        ControlFunctionType.CONTROL_SEQUENCE,
-                                        ControlFunctionType.INDEPENDENT_FUNCTION,
-                                        ControlFunctionType.CONTROL_STRING
-                                )
-                                .build();
+                ParserFactory factory = new ParserFactory.Builder()
+                    .environment(
+                            Environment._7_BIT
+                    )
+                    .functionTypes(
+                            ControlFunctionType.C0_SET,
+                            ControlFunctionType.C1_SET,
+                            ControlFunctionType.CONTROL_SEQUENCE,
+                            ControlFunctionType.INDEPENDENT_FUNCTION,
+                            ControlFunctionType.CONTROL_STRING
+                    )
+                    .build();
 
-                parser =
-                        factory.createParser(
+                parser = factory.createParser(
                                 input,
                                 StandardCharsets.UTF_8,
                                 4096
@@ -56,8 +50,7 @@ public class AnsiTerminalParser {
 
                 while (true) {
 
-                    Fragment fragment =
-                            parser.parse();
+                    Fragment fragment = parser.parse();
 
                     if (fragment == null) {
                         break;
@@ -80,40 +73,9 @@ public class AnsiTerminalParser {
     private void procesarFragmento(Fragment fragment) {
 
         if (fragment instanceof FunctionFragment function) {
-
-            System.out.println(
-                    "================================"
-            );
-
-            System.out.println(
-                    "FUNCTION: "
-                            + function.getFunction()
-            );
-
-            System.out.println(
-                    "ARGUMENTS: "
-                            + function.getArguments()
-            );
-
-            System.out.println(
-                    "TEXT: ["
-                            + function.getText()
-                            + "]"
-            );
-
-            System.out.println(
-                    "================================"
-            );
-
             procesarFuncion(function);
 
         } else {
-
-            System.out.println(
-                    "TEXT: ["
-                            + fragment.getText()
-                            + "]"
-            );
 
             buffer.write(fragment.getText());
         }
@@ -132,20 +94,27 @@ public class AnsiTerminalParser {
                         .get(0)
                         .getValue()
                         .toString();
+        String type = null;
 
         switch (value) {
 
-            case "0" ->
-                    buffer.eraseLineToEnd();
+            case "0" ->{
+                buffer.eraseLineToEnd();
+                type = "case 0";
+            }
 
             default -> {
+                type = "default";
             }
         }
+
+        System.out.println("-------------- BORRAR -----------------");
+        System.out.println("A borrar: "+ value);
+        System.out.println("---------------------------------------");
     }
     private void procesarFuncion(FunctionFragment function) {
 
-        String nombre =
-                function.getFunction().toString();
+        String nombre = function.getFunction().toString();
 
         switch (nombre) {
 

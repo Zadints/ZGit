@@ -35,10 +35,7 @@ public class IndexController {
 
         buffer = new TerminalBuffer(120, 40);
 
-        renderer = new TerminalRenderer(
-                terminal.getCanvas(),
-                buffer
-        );
+        renderer = new TerminalRenderer(terminal.getCanvas(), buffer);
 
         terminal.setBuffer(buffer);
 
@@ -53,15 +50,19 @@ public class IndexController {
 
             console.start();
 
-            parser = new AnsiTerminalParser(
-                    buffer
-            );
+            parser = new AnsiTerminalParser(buffer);
+            parser.start(console.getInputStream());
 
-            parser.start(
-                    console.getInputStream()
-            );
+            renderTimer = new AnimationTimer() {
 
-            iniciarActualizacionVisual();
+                @Override
+                public void handle(long now) {
+
+                    renderer.render();
+                }
+            };
+
+            renderTimer.start();
 
         } catch (Exception e) {
 
@@ -69,19 +70,7 @@ public class IndexController {
         }
     }
 
-    private void iniciarActualizacionVisual() {
 
-        renderTimer = new AnimationTimer() {
-
-            @Override
-            public void handle(long now) {
-
-                renderer.render();
-            }
-        };
-
-        renderTimer.start();
-    }
 
     private void configurarTeclado() {
 
@@ -111,11 +100,6 @@ public class IndexController {
         if (text == null || text.isEmpty()) {
             return;
         }
-
-        /*
-         * Evitamos enviar caracteres de control
-         * que ya manejamos en KEY_PRESSED.
-         */
         if (text.equals("\r")
                 || text.equals("\n")
                 || text.equals("\t")) {
@@ -124,11 +108,8 @@ public class IndexController {
         }
 
         try {
-
             enviar(text);
-
         } catch (Exception e) {
-
             e.printStackTrace();
         }
 
@@ -136,6 +117,9 @@ public class IndexController {
     }
 
     private void procesarTecla(KeyEvent event) {
+        System.out.println(
+                "TECLA: " + event.getCode()
+        );
 
         try {
 
@@ -149,6 +133,12 @@ public class IndexController {
 
             if (code == KeyCode.BACK_SPACE) {
                 enviar("\b");
+                event.consume();
+                return;
+            }
+
+            if (code == KeyCode.DELETE) {
+                enviar("\u001B[3~");
                 event.consume();
                 return;
             }
