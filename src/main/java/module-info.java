@@ -12,13 +12,11 @@ module org.zadints.zgit {
     requires pty4j;
 
     requires org.slf4j;
-    requires org.slf4j.simple;
-
-    opens org.zadints.zgit to javafx.fxml;
-    opens org.zadints.zgit.presentation.controller to javafx.fxml;
-    opens org.zadints.zgit.presentation.terminal to javafx.fxml;
 
     exports org.zadints.zgit;
-    exports org.zadints.zgit.presentation.controller;
-    exports org.zadints.zgit.presentation.terminal;
+    opens org.zadints.zgit to javafx.fxml;
+
+
+    exports org.zadints.zgit.presentation.controllers;
+    opens org.zadints.zgit.presentation.controllers to javafx.fxml;
 }

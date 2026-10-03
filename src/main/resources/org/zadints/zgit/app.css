@@ -1,6 +1,8 @@
 .root {
     -fx-font-family: "Poppins";
     -fx-background-color: #0b0f19;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
 }
 
 
@@ -21,6 +23,8 @@
     -fx-background-color: #0d111c;
     -fx-border-color: transparent transparent #1a2130 transparent;
     -fx-border-width: 0 0 1px 0;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
 }
 
 
@@ -136,6 +140,8 @@
     -fx-border-width: 0 1px 0 0;
 
     -fx-pref-width: 58px;
+
+    -fx-background-radius: 0 0 0 20;
 }
 
 
@@ -273,7 +279,30 @@
 
     -fx-background-color: transparent;
 }
+.terminal-prompt {
+    -fx-text-fill: #00A6FF;
+    -fx-font-family: "JetBrains Mono";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
 
+.terminal-command {
+    -fx-text-fill: #E5E7EB;
+    -fx-font-family: "JetBrains Mono";
+    -fx-font-size: 14px;
+}
+
+.terminal-output {
+    -fx-text-fill: #D1D5DB;
+    -fx-font-family: "JetBrains Mono";
+    -fx-font-size: 13px;
+}
+
+.terminal-error {
+    -fx-text-fill: #F87171;
+    -fx-font-family: "JetBrains Mono";
+    -fx-font-size: 13px;
+}
 
 /* ==============================
    SIDEBAR ICONS
@@ -324,4 +353,37 @@
 
 .header-icon-button:hover .ikonli-font-icon {
     -fx-icon-color: #e5e7eb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.terminal-scroll {
+    -fx-background-color: #0B1020;
+    -fx-background: #0B1020;
+}
+
+.terminal-scroll > .viewport {
+    -fx-background-color: #0B1020;
+}
+
+.terminal-history {
+    -fx-background-color: #0B1020;
 }
