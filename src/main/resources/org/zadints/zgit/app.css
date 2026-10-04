@@ -43,7 +43,7 @@
 }
 
 .project-icon {
-    -fx-pref-width: 30;
+    -fx-pref-width: 35;
     -fx-pref-height: 30;
 
     -fx-background-color: #151c2b;
@@ -58,13 +58,16 @@
 
 .project-name {
     -fx-text-fill: #e5e7eb;
+    -fx-font-family: "Poppins";
     -fx-font-size: 13px;
-    -fx-font-weight: 600;
+    -fx-font-weight: bold;
 }
 
 .project-branch {
+    -fx-font-family: "Poppins";
     -fx-text-fill: #697386;
-    -fx-font-size: 10px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
 }
 
 

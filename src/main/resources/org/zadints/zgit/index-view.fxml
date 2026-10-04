@@ -13,6 +13,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import javafx.scene.control.ScrollPane?>
 <?import org.zadints.zgit.presentation.controllers.TerminalView?>
+<?import javafx.scene.shape.SVGPath?>
 <BorderPane
 
         xmlns="http://javafx.com/javafx/21"
@@ -46,7 +47,9 @@
 
         <StackPane styleClass="project-icon">
 
-          <Label text="Z"/>
+          <children>
+            <SVGPath content="M.8,5.8C.8,.36,4.65,1,10.5,1C13.54,1,20.77,.59,22.7,2.5C24.49,4.26,22.06,10.28,20.3,12.2C20.18,12.33,18.55,16.07,17.1,16.1C16.74,16.1,12.36,15.44,13.4,15.6C17.22,16.18,13.77,12.93,14.7,12.9C15.67,12.87,16.8,11.96,17,10.2C17.19,8.52,15.67,8.12,15.7,7.5C15.73,6.74,15.43,6.24,15.4,6.2C15.17,5.93,14.76,6.8,13.7,7C12.62,7.2,11.29,6.91,10.3,6.9C9.23,6.89,8.01,5.74,7.9,5.8C7.28,6.14,8.02,6.86,7.5,7.5C6.77,8.4,5.28,10.36,7.5,12.2C7.89,12.52,8.78,12.95,10,12.8C10.12,12.78,8.47,15.38,9.5,16C11.68,17.31,17.37,17.26,17.5,17.5C18.07,18.55,13.56,24.26,13.4,24.3C9.95,25.1,.8,11.24,.8,5.8z" fill="#22A5F1" />
+          </children>
 
         </StackPane>
 
@@ -54,11 +57,13 @@
         <VBox spacing="1">
 
           <Label
+                  fx:id="appName"
                   text="ZGit"
                   styleClass="project-name"/>
 
           <Label
-                  text="main"
+                  fx:id="appVersion"
+                  text="v0.0.0.0-release"
                   styleClass="project-branch"/>
 
         </VBox>
@@ -69,59 +74,23 @@
       <Region HBox.hgrow="ALWAYS"/>
 
 
-      <!-- PROJECT -->
 
-      <Button
-              text="Project"
-              styleClass="header-button">
-
+      <Button styleClass="header-button">
         <graphic>
-
-          <FontIcon
-                  iconLiteral="oct-repo-24"
-                  iconSize="15"/>
-
+          <FontIcon iconLiteral="oct-package-16" iconSize="15"/>
         </graphic>
-
-      </Button>
-
-
-      <!-- PLUGINS -->
-
-      <Button
-              text="Plugins"
-              styleClass="header-button">
-
-        <graphic>
-
-          <FontIcon
-                  iconLiteral="oct-package-24"
-                  iconSize="15"/>
-
-        </graphic>
-
-      </Button>
-
-
-      <!-- SETTINGS -->
-
-      <Button
-              styleClass="header-icon-button">
-
-        <graphic>
-
-          <FontIcon
-                  iconLiteral="oct-gear-24"
-                  iconSize="16"/>
-
-        </graphic>
-
         <tooltip>
-
-          <Tooltip text="Configuración"/>
-
+          <Tooltip text="Plugins"/>
         </tooltip>
+      </Button>
 
+      <Button styleClass="header-icon-button">
+        <graphic>
+          <FontIcon iconLiteral="oct-gear-16" iconSize="16"/>
+        </graphic>
+        <tooltip>
+          <Tooltip text="Configuración"/>
+        </tooltip>
       </Button>
 
 
@@ -130,10 +99,20 @@
       <StackPane
               styleClass="app-logo">
 
-        <Label text="ZG"/>
+        <Label text="Free"/>
 
       </StackPane>
 
+      <Button styleClass="header-icon-button">
+        <graphic>
+          <FontIcon iconLiteral="oct-horizontal-rule-16" iconSize="16"/>
+        </graphic>
+      </Button>
+      <Button fx:id="btnClose" onAction="#btnCloseOnAction" styleClass="header-icon-button">
+        <graphic>
+          <FontIcon iconLiteral="oct-x-16" iconSize="16"/>
+        </graphic>
+      </Button>
     </HBox>
 
   </top>

@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83938b73-e64d-4324-af75-56abbfa0b025" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/config/AppLoadYmlManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/presentation/utils/MouseMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/translations/es_ES.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/domain/entities/app/AppCustomized.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/domain/entities/app/AppProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/domain/entities/app/customized/top.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/Launcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/application/terminal/TerminalBuffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/application/terminal/TerminalRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/application/usecase/OpenConsole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/domain/entities/TerminalCell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/infraestructure/terminal/AnsiTerminalParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/presentation/controller/IndexController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/presentation/terminal/TerminalView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/config/AppLoadYmlManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/core/config/AppLoadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/presentation/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zadints/zgit/presentation/controllers/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/zadints/zgit/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/zadints/zgit/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/zadints/zgit/index-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/zadints/zgit/index-view.fxml" afterDir="false" />
     </list>
@@ -82,7 +70,8 @@
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.selected.package.jshint": "",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -130,5 +119,20 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
